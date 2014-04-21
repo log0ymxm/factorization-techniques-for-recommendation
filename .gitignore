@@ -1,4 +1,6 @@
-resources/public/
 .boot/
 target
 .lein-*
+**/*/#*
+.#*
+.DS_Store

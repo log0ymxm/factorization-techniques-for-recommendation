@@ -28,11 +28,6 @@
 
 (defelem slide
   [{:keys [markdown title background transition] :as attrs} children]
-  ;; TODO
-  ;; - add data-background-repeat
-  ;; - add data-background-size
-  ;; - add class -> data-state
-  ;; - abstract out this nonsense
   (let [attrs (dissoc attrs :markdown :title :background :transition)
         attrs (if background
                 (assoc attrs :data-background background)
@@ -66,6 +61,9 @@
      (.initialize
       js/Reveal
       (clj->js {:history true
+                :math
+                {:mathjax "http://cdn.mathjax.org/mathjax/latest/MathJax.js"
+                 :config "TeX-AMS_HTML-full"}
                 :dependencies
                 [{:src "reveal.js/plugin/markdown/marked.js"}
                  {:src "reveal.js/plugin/markdown/markdown.js"}
@@ -73,6 +71,8 @@
                   :async true
                   :callback (fn [] (.initHighlightingOnLoad js/hljs))}
                  {:src "reveal.js/plugin/notes/notes.js"
+                  :async true}
+                 {:src "reveal.js/plugin/math/math.js"
                   :async true}]}))))
 
   (div (-> attrs (dissoc :theme) (merge {:class "reveal"}))
@@ -100,3 +100,8 @@
 (defelem highlight
   [attrs children]
   (pre (code attrs children)))
+
+(defn latex
+  [markup]
+  (pre
+   (str "$$" markup "$$")))

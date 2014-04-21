@@ -1,6 +1,5 @@
 (ns hoplon.util)
 
-
 (defn is-text?
   [children]
   (and (= (count children) 1)
@@ -9,3 +8,8 @@
 (defn url
   [href]
   (a {:href href} href))
+
+(defn email
+  [address]
+  (a {:href (str "mailto:" address)}
+     address))

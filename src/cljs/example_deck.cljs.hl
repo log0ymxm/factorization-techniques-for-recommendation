@@ -1,22 +1,21 @@
 (page "example-deck.html"
       (:require [hoplon.reveal :refer [slideshow]]
-                [example-deck.chapter1 :as ch1]
-                [example-deck.chapter2 :as ch2]
-                [example-deck.chapter3 :as ch3]
-                [example-deck.chapter4 :as ch4]
-                [example-deck.chapter5 :as ch5]
-                [example-deck.chapter6 :as ch6]
-                [example-deck.chapter7 :as ch7]))
+                [example-deck.chapter1 :as ch1-cover-intro]
+                [example-deck.chapter2 :as ch2-recsys]
+                [example-deck.chapter3 :as ch3-mf]
+                [example-deck.chapter4 :as ch4-building-mf]
+                [example-deck.chapter5 :as ch5-fm]
+                [example-deck.chapter6 :as ch6-wrapup]))
 
 
 (html
-  (head)
-  (body
-    (slideshow :theme "moon"
-      (ch1/slides)
-      (ch2/slides)
-      (ch3/slides)
-      (ch4/slides)
-      (ch5/slides)
-      (ch6/slides)
-      (ch7/slides))))
+ (head
+  (link :rel "stylesheet" :href "custom.css"))
+ (body
+  (slideshow :theme "simple"
+             (ch1-cover-intro/slides)
+             (ch2-recsys/slides)
+             (ch3-mf/slides)
+             (ch4-building-mf/slides)
+             (ch5-fm/slides)
+             (ch6-wrapup/slides))))

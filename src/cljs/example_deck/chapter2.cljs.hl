@@ -4,41 +4,36 @@
 
 
 (defn slides []
-  (chapter :title "Web Dev w/Clojure"
-    (slide :title "The Big Secret"
-      (ul
-        (li "Web development is functional")
-        (li "Clojure is great at web development"))
-      (notes "A request comes in, a transformation is performed, a response is "
-             "returned. Web development lends itself to functional programming "
-             "well. Many people new to Clojure think that Clojure isn't the "
-             "best language for web development because it doesn't have a "
-             "comprehensive framework like Play or Ruby on Rails."))
-    (slide :title "The Ring Cycle"
-      (img :src "img/ring.png")
-      (notes "Clojure provides good facilities for creating web apps with Ring"))
-    (slide :title "A simple Ring app"
-      (sample-code/get-simple-ring-app))
-    (slide :title "Libraries over frameworks"
-      (ul
-        (li "Routing - Compojure")
-        (li "Templating - Hiccup or Selmer")
-        (li "SQL - Korma")
-        (li "i18n and l10n - Tower")
-        (li "Asset pipeline - Optimus or Stefon")
-        (li (strong "Luminus")
-            (text " wraps many of these up in a set of Leiningen tasks.")))
-      (notes "Clojure just has a different approach: libraries that work well "
-             "together and that you can mix and match. Does this make getting "
-             "started harder? Yes, because you have to pick your tools. But "
-             "once you start, Clojure web development can be a blast."))
-    (slide :title "Next-Level Web Apps"
-     (ul
-      (li "Single-page apps")
-      (li "APIs")
-      (li "WebSockets"))
-     (notes
-      (bullet "When things get more complicated, though, how can Clojure help "
-              "us?")
-      (bullet "I'm going to show three libraries that have helped me "
-              "greatly")))))
+  (chapter :title "What is Recommendation?"
+
+           (slide :title "Some Obvious Examples"
+                  (ul
+                   (li "Netflix suggesting movies you might like after you've added some ratings")
+                   (li "Amazon offering \"commonly sold together\" discount packages")
+                   (li "Facebook showing \"friends you might know\"")))
+
+           ;; TODO http://www.cise.ufl.edu/research/sparse/matrices/
+           (slide :title "We can think of recommendation problems as a graph or network"
+                  (bullet "Multiple vertices with edges connecting them.")
+                  (for [graph ["Alemdar@Alemdar.gif"
+                               "Grund@poli_large.APlusAT.gif"
+                               "QCD@conf5_0-4x4-10.gif"]]
+                    (img :src (str "img/graphs/" graph)
+                         :width 260
+                         :height 260)))
+
+           ;; TODO http://snap.stanford.edu/data/index.html
+           (slide :title "They are seen in all kinds of industries"
+                  (ul (for [topic ["Social" "Communication" "Road" "Product"]]
+                        (li (str topic " Networks")))
+                      (li "...")))
+
+           (slide :title "We can look at different aspects of the data"
+                  (ul
+                   (li "Content Based Filtering")
+                   (li "Collaborative Filtering")))
+
+           (slide :title "There are different ways to solve the collaborative problem"
+                  (ul
+                   (li "Item Similarity / Nearest Neighbors")
+                   (li "Factorization and Latent Dimensions")))))

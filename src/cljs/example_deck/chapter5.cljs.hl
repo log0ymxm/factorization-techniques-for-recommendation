@@ -1,23 +1,29 @@
 (ns example-deck.chapter5
-    (:require [hoplon.reveal :refer [chapter slide notes quicklist]]
+    (:require [hoplon.reveal :refer [chapter slide notes quicklist bullet]]
               [example-deck.sample-code :as sample-code]))
 
 
 (defn slides []
-  (chapter :title "HTTP Kit"
-    (slide :title "A Clojure web server"
-     (quicklist
-      "Supports WebSockets and long polling"
-      "Supports HTTP streaming"
-      "Compatible with Ring"
-      "So fast"
-      "Also a HTTP client"))
-    (slide :title "Streaming example"
-      (sample-code/get-http-streaming))
-    (slide :title "Streaming an OutputStream (part 1)"
-      (sample-code/get-http-outstream-p1))
-    (slide :title "Streaming an OutputStream (part 2)"
-      (sample-code/get-http-outstream-p2))
-    (slide :title "WebSocket example"
-      (sample-code/get-http-websocket)
-      (notes "Note the unified API, allowing us to degrade to long polling"))))
+  (chapter :title "The Factorization Machine"
+           (slide :title "What is this?"
+                  ;; TODO http://seankenney.com/portfolio/mazda/
+                  (img :src "img/lego-car-seankenney.jpg")
+                  (div :class "fragment"
+                       (p (strike "car"))
+                       (p "legos!")))
+
+           (slide :title "The Factorization Machine is a generalization of traditional matrix factorization techniques"
+                  (bullet "Matrix factorization is a specialized case of the factorization machine.")
+                  )
+
+           (slide :title "It earns it's name from the Support Vector Machine"
+                  ;; TODO SVM visual example
+                  )
+
+           (slide :title "But really it's not much like an SVM"
+                  )
+
+           (slide :title "It's a generalized learning technique"
+                  )
+
+           ))
