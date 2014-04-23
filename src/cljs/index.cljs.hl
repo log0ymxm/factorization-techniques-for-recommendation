@@ -5,7 +5,8 @@
                 [factorization-for-recsys.chapter3 :as ch3-mf]
                 [factorization-for-recsys.chapter4 :as ch4-building-mf]
                 [factorization-for-recsys.chapter5 :as ch5-fm]
-                [factorization-for-recsys.chapter6 :as ch6-wrapup]))
+                [factorization-for-recsys.chapter6 :as ch6-example]
+                [factorization-for-recsys.chapter7 :as ch7-wrapup]))
 
 
 (html
@@ -18,4 +19,5 @@
              (ch3-mf/slides)
              (ch4-building-mf/slides)
              (ch5-fm/slides)
-             (ch6-wrapup/slides))))
+             (ch6-example/slides)
+             (ch7-wrapup/slides))))

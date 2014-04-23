@@ -1,29 +1,19 @@
 (ns factorization-for-recsys.chapter6
     (:require [hoplon.reveal :refer [chapter slide bullet]]
-              [hoplon.util :as util]))
+              [hoplon.util :as util]
+              [factorization-for-recsys.sample-code :as code]))
 
 (defn slides []
-  (chapter :title "Questions?"
-           (slide :title "Thanks!"
-                  (bullet "Paul English")
-                  (bullet (util/email "paul.english@utah.edu"))
-                  (bullet (util/url "https://github.com/log0ymxm")))
-
-           (slide :title "References"
-                  (div
-                   :style "font-size:0.3em;"
-                   (h4 "Reading & Images")
-                   (ol
-                    (li "Rendle, “Factorization Machines with libFM,” 2012.")
-                    (li "Rendle, et.al., “Fast context-aware recommendations with factorization machines,” 2011.")
-                    (li "Freudenthaler, et.al., “Bayesian factorization machines,” 2011.")
-                    (li "Adams, et.al., “Incorporating Side Information in Probabilistic Matrix Factorization with Gaussian Processes,” 2010.")
-                    (li "Rendle, “Factorization machines,” 2010.")
-                    (li "Schmidt, et.al., “Bayesian Non-negative Matrix Factorization,” 2009.")
-                    (li "Koren, et.al., “Matrix factorization techniques for recommender systems,” 2009.")
-                    (li "Salakhutdinov and Mnih, “Bayesian probabilistic matrix factorization using Markov chain Monte Carlo,” 2008.")
-                    (li "Salakhutdinov and Mnih, “Probabilistic Matrix Factorization.,” 2007.")
-                    (li (util/url "http://www.cise.ufl.edu/research/sparse/matrices/"))
-                    (li (util/url "http://snap.stanford.edu/data/index.html"))
-                    (li (util/url "http://www.mathworks.com/help/matlab/creating_plots/display-quiver-plot-over-contour-plot.html"))
-                    (li (util/url "http://seankenney.com/portfolio/mazda/")))))))
+  (chapter :title "An Example"
+           (slide :title "A utility function"
+                  (code/example-rand-matrix))
+           (slide :title "A gradient function"
+                  (code/example-gradient))
+           (slide :title "A cost function"
+                  (code/example-rse))
+           (slide :title "MF by Gradient Descent"
+                  (code/example-mf))
+           (slide :title "Setup initial state"
+                  (code/example-setup))
+           (slide :title "Create predictions"
+                  (code/example-prediction))))
