@@ -1,0 +1,9 @@
+[1]	S. Rendle, “Factorization Machines with libFM,” ACM Transactions on Intelligent Systems and Technology (TIST), vol. 3, no. 3, pp. 57–22, May 2012.
+[2]	S. Rendle, Z. Gantner, C. Freudenthaler, and L. Schmidt-Thieme, “Fast context-aware recommendations with factorization machines,” SIGIR '11, pp. 635–644, Jul. 2011.
+[3]	C. Freudenthaler, L. Schmidt-Thieme, and S. Rendle, “Bayesian factorization machines,” 2011.
+[4]	R. P. Adams, G. E. Dahl, and I. Murray, “Incorporating Side Information in Probabilistic Matrix Factorization with Gaussian Processes,” arXiv.org, vol. stat.ML. 25-Mar-2010.
+[5]	S. Rendle, “Factorization machines,” Data Mining (ICDM), 2010.
+[6]	M. N. Schmidt, O. Winther, and L. K. Hansen, “Bayesian Non-negative Matrix Factorization,” Independent Component Analysis and Signal Separation, vol. 5441, no. 68, pp. 540–547, 2009.
+[7]	Y. Koren, R. Bell, and C. Volinsky, “Matrix factorization techniques for recommender systems,” Computer, 2009.
+[8]	R. Salakhutdinov and A. Mnih, “Bayesian probabilistic matrix factorization using Markov chain Monte Carlo,” ICML '08, pp. 880–887, Jul. 2008.
+[9]	R. Salakhutdinov and A. Mnih, “Probabilistic Matrix Factorization.,” NIPS, 2007.

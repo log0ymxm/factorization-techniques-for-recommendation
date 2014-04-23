@@ -1,5 +1,5 @@
 (ns factorization-for-recsys.chapter1
-  (:require [hoplon.reveal :refer [intro bullet]]
+  (:require [hoplon.reveal :refer [intro bullet notes]]
             [hoplon.util :refer [email url]]))
 
 
@@ -7,4 +7,11 @@
   (intro :title "Factorization Techniques for Recommendation"
     (bullet "Paul English")
     (bullet (email "paul.english@utah.edu"))
-    (bullet (url "https://github.com/log0ymxm"))))
+    (bullet (url "https://github.com/log0ymxm"))
+
+    (notes "Several topics are covered:
+What is a RecSys?
+What is factorization?
+How is matrix factorization done?
+How can it accommodate additional data?
+What are some improvements in it's model?")))

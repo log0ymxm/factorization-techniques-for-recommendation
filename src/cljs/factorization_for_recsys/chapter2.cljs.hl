@@ -10,9 +10,19 @@
                   (ul
                    (li "Netflix suggesting movies you might like after you've added some ratings")
                    (li "Amazon offering \"commonly sold together\" discount packages")
-                   (li "Facebook showing \"friends you might know\"")))
+                   (li "Facebook showing \"friends you might know\""))
+                  (notes "There are a ton of ways recommendation is used
+in every day software systems. These are a few trivial and easily recognized
+applications of it. It's a beneficial tool that can be applied in varying ways."))
 
-           ;; TODO http://www.cise.ufl.edu/research/sparse/matrices/
+           (slide :title "We can look at different aspects of the data"
+                  (ul
+                   (li (strong "Content Based Filtering: ") "Makes use of attributes, e.g. Pandora.")
+                   (li (strong "Collaborative Filtering: ") "Makes use of past user behavior, e.g. Netfix ratings, Amazon purchases."))
+                  (notes "There are various ways we can approach
+ the RecSys problem. We can look at characteristics of our data,
+or we can look at how users and their peers interact with data."))
+
            (slide :title "We can think of recommendation problems as a graph or network"
                   (bullet "Multiple vertices with edges connecting them.")
                   (for [graph ["Alemdar@Alemdar.gif"
@@ -20,20 +30,24 @@
                                "QCD@conf5_0-4x4-10.gif"]]
                     (img :src (str "img/graphs/" graph)
                          :width 260
-                         :height 260)))
+                         :height 260))
+                  (notes "Graphs are a very simple way to think of a recommendation
+problem. We represent items as nodes in a graph, and relation information as
+vertices. These graphs are often weighted, often bipartite, and often very sparse."))
 
-           ;; TODO http://snap.stanford.edu/data/index.html
            (slide :title "They are seen in all kinds of industries"
                   (ul (for [topic ["Social" "Communication" "Road" "Product"]]
                         (li (str topic " Networks")))
-                      (li "...")))
-
-           (slide :title "We can look at different aspects of the data"
-                  (ul
-                   (li "Content Based Filtering")
-                   (li "Collaborative Filtering")))
+                      (li "..."))
+                  (notes "Networks are seen in all kinds of interesting industries.
+It's very common for datasets to be viewable as a graph, and if there is a benefit
+in finding probably connections in these graphs these techniques can be used."))
 
            (slide :title "There are different ways to solve the collaborative problem"
                   (ul
                    (li "Item Similarity / Nearest Neighbors")
-                   (li "Factorization and Latent Dimensions")))))
+                   (li "Factorization and Latent Dimensions"))
+                  (notes "We can take a few different approaches to solving
+RecSys problems. Nearest neighbors or item similarity approach. Matrix factorization
+approach. They have different strengths, they can work well in tandem, and
+they aren't necessarily the only way to solve this kind of issue."))))

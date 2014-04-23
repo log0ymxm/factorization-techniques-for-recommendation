@@ -6,24 +6,36 @@
 (defn slides []
   (chapter :title "The Factorization Machine"
            (slide :title "What is this?"
-                  ;; TODO http://seankenney.com/portfolio/mazda/
                   (img :src "img/lego-car-seankenney.jpg")
                   (div :class "fragment"
                        (p (strike "car"))
-                       (p "legos!")))
+                       (p "legos!"))
+                  (notes ""))
 
-           (slide :title "The Factorization Machine is a generalization of traditional matrix factorization techniques"
-                  (bullet "Matrix factorization is a specialized case of the factorization machine.")
-                  )
+           (slide :title "The Factorization Machine."
+                  (br)
+                  (ul
+                   (li "Matrix factorization is a specialized case of the factorization machine.")
+                   (li "It's a generalized learning algorithm, thus it's much more flexible.")
+                   (li "It's great at dealing with sparse data, so it continues to perform well for collaborative filtering problems."))
+                  (notes ""))
 
-           (slide :title "It earns it's name from the Support Vector Machine"
-                  ;; TODO SVM visual example
-                  )
+           (slide :title "The FM Model"
+                  (br)
+                  (img :src "img/2-degree-factorization-machine.png"
+                       :class "no-border")
+                  (notes ""))
 
-           (slide :title "But really it's not much like an SVM"
-                  )
+           (slide :title "The n-degree FM Model"
+                  (br)
+                  (img :src "img/n-degree-factorization-machine.png"
+                       :class "no-border")
+                  (notes ""))
 
-           (slide :title "It's a generalized learning technique"
-                  )
-
-           ))
+           (slide :title "We Change the Data Representation"
+                  (bullet "The FM is a general learner, so we have to adjust the way we represent our data.")
+                  (br)
+                  (img :src "img/structuring-data-for-the-fm.png"
+                       :width 900
+                       :class "no-border")
+                  (notes ""))))

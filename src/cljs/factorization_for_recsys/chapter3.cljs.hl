@@ -6,8 +6,17 @@
 
 (defn slides []
   (chapter :title "Matrix Factorization"
-           (slide :title "Matrix Factorization is the process of seperating one matrix into multiple factor matrices"
-                  (sample-code/example-matrices))
+           (slide :title "Matrix Factorization is the process
+of splitting (factoring) one matrix into two"
+                  (br)
+                  (img :src "img/r-approx-p-dot-q.png"
+                       :class "no-border")
+                  (br)
+                  (img :src "img/r-p-q-k.png"
+                       :class "no-border")
+                  (notes "We factor a matrix by
+finding two matrices with appropriate dimension that multiply
+together to approximate. R is observed data. P & Q are what we're trying to find."))
 
            (slide :title "You can think of it like pulling apart a matrix"
                   (img :src "img/matrix-multiplication-split.png"
@@ -22,11 +31,19 @@
                               :class (str "fragment no-border"
                                           (when (= i 1) " current-visible"))))))
 
+           (slide :title "We choose a cost function that we can minimize."
+                  (bullet "Regularized Square Error")
+                  (br)
+                  (img :src "img/regularized-square-error.png"
+                       :class "no-border")
+                  (notes "We choose a function that we can use to measure cost.
+Regularized square error is shown here, though any cost function appropriate
+can be used. We find the difference here between R and R-hat (P dot Q). We add the
+l2 norm to regularize the plane we will be searching over."))
+
            (slide :title "We find our factor matrices using an optimization routine"
                   (bullet "e.g. gradient descent")
                   (img :src "img/gradient-descent/DisplayVelocityPlotOverContourPlotExample_02.png"
                        :class "no-border")
-;; todo mf gradient citation
-;; http://www.mathworks.com/help/matlab/creating_plots/display-quiver-plot-over-contour-plot.html
-
-                  )))
+                  (notes "We optimize our cost function using a technique like gradient descent.
+ALS, SGD, MCMC, and other methods work as well."))))

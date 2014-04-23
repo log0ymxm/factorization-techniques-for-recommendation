@@ -1,18 +1,41 @@
 (ns factorization-for-recsys.chapter4
-    (:require [hoplon.reveal :refer [chapter slide notes highlight quicklist]]
+    (:require [hoplon.reveal :refer [chapter slide notes highlight quicklist bullet]]
               [factorization-for-recsys.sample-code :as sample-code]))
 
 
 (defn slides []
   (chapter :title "Building on the Matrix Factorization Model"
-           (slide :title "Including Additional Information"
-                  ;; TODO
-                  )
+           (slide :title "Accounting for bias"
+                  (bullet "Some users in general rate higher or lower. Some movies
+get better reviews. We can account for this bias. Our new parameters b_i and b_u
+represent a deviation from the mean.")
+                  (br)
+                  (img :src "img/mf-bias.png"
+                       :class "no-border")
+                  (notes "We look for bias parameters that can help even out recommendations
+between our users. We include a global bias as well."))
 
-           (slide :title "Making use of time"
-                  ;; TODO
-                  )
+           (slide :title "Including Additional Information"
+                  (bullet "Maybe we want a hybrid content/collaborative approach. For example: movie descriptions,
+genre, actors & directors involved, user age.")
+                  (br)
+                  (img :src "img/mf-additional-information.png"
+                       :class "no-border")
+                  (notes "We can include infomration about our items,
+or about our users, or implicit feedback we get in the behaviour of our
+system."))
+
+           (slide :title "Temporal Dynamics"
+                  (bullet "Paying attention to time is useful. Maybe a users ratings change
+over time. Maybe various genres go into and out of popularity.")
+                  (br)
+                  (img :src "img/mf-temporal-dynamics.png"
+                       :class "no-border")
+                  (notes ""))
 
            (slide :title "Confidence Intervals"
-                  ;; TODO
-                  )))
+                  (bullet "We can use confidence intervals to account somewhat for uncertainty.")
+                  (br)
+                  (img :src "img/mf-confidence-interval.png"
+                       :class "no-border")
+                  (notes ""))))
