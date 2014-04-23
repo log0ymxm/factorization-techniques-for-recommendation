@@ -1,4 +1,4 @@
-(ns example-deck.sample-code
+(ns factorization-for-recsys.sample-code
   (:require [hoplon.reveal :refer [highlight latex]]))
 
 (defn get-simple-ring-app []

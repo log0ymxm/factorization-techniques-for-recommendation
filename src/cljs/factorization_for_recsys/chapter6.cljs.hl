@@ -1,4 +1,4 @@
-(ns example-deck.chapter6
+(ns factorization-for-recsys.chapter6
     (:require [hoplon.reveal :refer [chapter slide bullet]]
               [hoplon.util :as util]))
 

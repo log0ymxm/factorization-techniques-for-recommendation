@@ -1,4 +1,4 @@
-(ns example-deck.chapter1
+(ns factorization-for-recsys.chapter1
   (:require [hoplon.reveal :refer [intro bullet]]
             [hoplon.util :refer [email url]]))
 

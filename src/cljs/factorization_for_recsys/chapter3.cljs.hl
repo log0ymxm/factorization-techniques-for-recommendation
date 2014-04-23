@@ -1,7 +1,7 @@
-(ns example-deck.chapter3
+(ns factorization-for-recsys.chapter3
     (:require [hoplon.reveal :refer [chapter slide notes bullet]]
               [hoplon.util :refer [latex]]
-              [example-deck.sample-code :as sample-code]))
+              [factorization-for-recsys.sample-code :as sample-code]))
 
 
 (defn slides []
